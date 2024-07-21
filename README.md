@@ -27,12 +27,7 @@ This project contains a Node.js script that uses Puppeteer to scrape restaurant 
     npm install
 
 3. Create an Excel file (restaurant-urls.xlsx) in the root directory of the project. This file should contain the restaurant URLs to be scraped, with a structure similar to the given excel(sample):
-      | url                                       |
-      |-------------------------------------------|
-      | https://www.zomato.com/ncr/blue-tokai...  |
-      | https://www.zomato.com/ncr/another...     |
-
-
+     
 ## Usage
 Run the script:
    node puppeteer.js
