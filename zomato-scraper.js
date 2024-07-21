@@ -11,7 +11,7 @@ const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
     const browser = await puppeteer.launch({
       headless: true,
       args: ['--disable-http2'],
-      timeout: 60000, // Increase the timeout to 60 seconds
+      timeout: 60000, 
     });
 
     // Read URLs from the Excel file
@@ -45,6 +45,7 @@ const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
         window.scrollBy(0, window.innerHeight);
       });
 
+      //data extraction
       console.log("Extracting data...");
       const items = await page.evaluate(() => {
         const item = [];
@@ -85,7 +86,7 @@ const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
     await browser.close();
 
     console.log("Creating Excel file...");
-    // Create an Excel file with a single sheet
+    // Create an Excel file sheet
     const worksheet = xlsx.utils.json_to_sheet(allItems);
     const resultWorkbook = xlsx.utils.book_new();
     xlsx.utils.book_append_sheet(resultWorkbook, worksheet, "Items");
